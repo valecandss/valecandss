@@ -1,0 +1,1 @@
+export 'register_smooth_indicator.dart';
