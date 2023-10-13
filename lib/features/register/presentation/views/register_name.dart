@@ -17,12 +17,12 @@ class RegisterName extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TitleShared(title: 'Escribe tu nombre y apellido'),
-              TextFormFieldShared(
-                labelText: 'Nombre',
+              TextFormFilledShared(
+                title: 'Nombre',
                 hintText: 'Escribe tu nombre',
               ),
-              TextFormFieldShared(
-                labelText: 'Apellido',
+              TextFormFilledShared(
+                title: 'Apellido',
                 hintText: 'Escribe tu Apellido',
               ),
             ],

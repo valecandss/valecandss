@@ -4,24 +4,22 @@ import 'package:valecandss/features/register/presentation/widgets/register_smoot
 import 'package:valecandss/features/shared/helpers/herlpers.dart';
 import 'package:valecandss/features/shared/presentation/widgets/widgets_shared.dart';
 
-
 class RegisterScreen extends StatelessWidget {
   const RegisterScreen({super.key});
   @override
   Widget build(BuildContext context) {
-
-    final paddingHorizontyal = ResponsivePadding(context, PaddingType.horizontal);
+    final paddingHorizontyal =
+        ResponsivePadding(context, PaddingType.horizontal);
     final paddingVertical = ResponsivePadding(context, PaddingType.vertical);
 
     PageController registerSreensCroller = PageController();
 
     return Scaffold(
       body: Padding(
-        padding: 
-          EdgeInsets.symmetric(
-            horizontal: paddingHorizontyal, 
-            vertical: paddingVertical,
-            ),
+        padding: EdgeInsets.symmetric(
+          horizontal: paddingHorizontyal,
+          vertical: paddingVertical,
+        ),
         child: Stack(
           children: [
             PageView(
@@ -30,6 +28,7 @@ class RegisterScreen extends StatelessWidget {
               children: const [
                 RegisterName(),
                 RegisterPicture(),
+                RegisterGender(),
               ],
             ),
             Align(
@@ -48,8 +47,9 @@ class RegisterScreen extends StatelessWidget {
                           icon: Icons.arrow_back_ios_new_rounded,
                           onPressed: () {
                             registerSreensCroller.previousPage(
-                              duration: const Duration(milliseconds: 400), 
-                              curve: Curves.easeInOutCirc);
+                              duration: const Duration(milliseconds: 400),
+                              curve: Curves.easeInOutCirc,
+                            );
                           },
                         ),
                       ),
@@ -59,8 +59,8 @@ class RegisterScreen extends StatelessWidget {
                           text: 'Continuar',
                           onPressed: () {
                             registerSreensCroller.nextPage(
-                              duration: const Duration(milliseconds: 400), 
-                              curve: Curves.easeInOutCirc);
+                                duration: const Duration(milliseconds: 400),
+                                curve: Curves.easeInOutCirc);
                           },
                         ),
                       ),

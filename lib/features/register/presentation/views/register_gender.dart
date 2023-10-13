@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:valecandss/features/register/presentation/widgets/widgets.dart';
 import 'package:valecandss/features/shared/presentation/widgets/widgets_shared.dart';
 
-class RegisterName extends StatelessWidget {
-  const RegisterName({super.key});
+class RegisterGender extends StatelessWidget {
+  const RegisterGender({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +18,12 @@ class RegisterName extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TitleShared(title: 'Escribe tu nombre y apellido'),
-              TextFormFieldShared(
-                labelText: 'Nombre',
-                hintText: 'Escribe tu nombre',
+              FilledCheck(
+                text: 'femenino',
               ),
-              TextFormFieldShared(
-                labelText: 'Apellido',
-                hintText: 'Escribe tu Apellido',
+              TextFormFilledShared(
+                title: 'Apellido',
+                hintText: 'Escribe tu apellido',
               ),
             ],
           ),

@@ -27,7 +27,7 @@ class FilledIconButtonShared extends StatelessWidget {
         child: IconButton.filled(
           onPressed: onPressed,
           style:ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(color ?? colors.secondary),
+            backgroundColor: MaterialStateProperty.all(color ?? colors.outline),
           ),
           icon: Icon(
             icon,

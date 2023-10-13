@@ -13,12 +13,12 @@ class RegisterPicture extends StatelessWidget {
         child: Form(
         child: Column(     
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             const TitleShared(
               title: 'Sube una foto desde tu galería',
             ),
             Center(
-              heightFactor: 2,
               child: FilledIconButtonShared(
                 icon: Icons.add_a_photo_outlined,
                 sizeIcon: defaultTextStyle * 3,

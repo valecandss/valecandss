@@ -22,7 +22,7 @@ class RegisterSmoothIndicator extends StatelessWidget {
         effect: WormEffect(
           dotWidth: 8,
           dotHeight: 8,
-          dotColor: colors.secondaryContainer,
+          dotColor: colors.outlineVariant,
           activeDotColor: colors.primary,
         ),
       ),
