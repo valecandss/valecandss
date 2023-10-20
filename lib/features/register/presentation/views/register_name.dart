@@ -1,35 +1,45 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:valecandss/features/shared/presentation/widgets/widgets_shared.dart';
 
-class RegisterName extends StatelessWidget {
+class RegisterName extends ConsumerStatefulWidget {
   const RegisterName({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  RegisterNameState createState() => RegisterNameState();
+}
 
-    return const Scaffold(
+class RegisterNameState extends ConsumerState<RegisterName> {
+  late TextEditingController name;
+  late TextEditingController lastName;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
       body: SafeArea(
         child: Form(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              TitleShared(title: 'Escribe tu nombre y apellido'),
-              TextFormFilledShared(
-                title: 'Nombre',
-                hintText: 'Escribe tu nombre',
-              ),
-              TextFormFilledShared(
-                title: 'Apellido',
-                hintText: 'Escribe tu Apellido',
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const TitleShared(title: 'Escribe tu nombre y apellido'),
+                  TextFormFilledShared(
+                    controller: name,
+                    title: 'Nombre',
+                    hintText: 'Escribe tu nombre',
+                  ),
+                  TextFormFilledShared(
+                    controller: lastName,
+                    title: 'Apellido',
+                    hintText: 'Escribe tu Apellido',
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
-    )
+        ),
       ),
     );
   }

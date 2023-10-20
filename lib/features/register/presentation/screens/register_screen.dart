@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:valecandss/config/confing.dart';
 import 'package:valecandss/features/register/presentation/views/views.dart';
 import 'package:valecandss/features/register/presentation/widgets/register_smooth_indicator.dart';
 import 'package:valecandss/features/shared/helpers/herlpers.dart';
@@ -46,10 +48,14 @@ class RegisterScreen extends StatelessWidget {
                         child: FilledIconButtonShared(
                           icon: Icons.arrow_back_ios_new_rounded,
                           onPressed: () {
-                            registerSreensCroller.previousPage(
-                              duration: const Duration(milliseconds: 400),
-                              curve: Curves.easeInOutCirc,
-                            );
+                            if (registerSreensCroller.page != 0) {
+                              registerSreensCroller.previousPage(
+                                duration: const Duration(milliseconds: 400),
+                                curve: Curves.easeInOutCirc,
+                              );
+                            } else {
+                              context.go(AppRoute.homeScreen);
+                            }
                           },
                         ),
                       ),
